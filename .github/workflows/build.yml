@@ -1,7 +1,9 @@
 on: push
 jobs:
     build:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
+        container: node:trixie
+        # runs-on: windows-latest
         steps:
          - run: node --version
          - run: npm --version
