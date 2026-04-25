@@ -9,8 +9,8 @@ jobs:
          - run: npm --version
          - uses: actions/checkout@v3
          - run: npm install
-         - run: npm app.js
-         
+         - run: node app.js
+
 
 
 
