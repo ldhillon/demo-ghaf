@@ -1,15 +1,34 @@
-name: tip3
+name: tip4
 on: push
 jobs:
     build-node:
+        name: Build and Run Node.js App
         runs-on: ubuntu-latest
         container: node:trixie
         steps:
-         - run: node --version
-         - run: npm --version
-         - uses: actions/checkout@v3
-         - run: npm install
-         - run: node app.js
+          - name: Check Node.js and npm Versions
+            run: |
+              node --version
+              npm --version
+          - name: Checkout Repository
+            uses: actions/checkout@v3
+          - name: Install Dependencies
+            run: npm install
+          - name: Run Application
+            run: node app.js    
+        
+# name: tip3
+# on: push
+# jobs:
+#     build-node:
+#         runs-on: ubuntu-latest
+#         container: node:trixie
+#         steps:
+#          - run: node --version
+#          - run: npm --version
+#          - uses: actions/checkout@v3
+#          - run: npm install
+#          - run: node app.js
 
 
 
